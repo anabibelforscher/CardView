@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
+    android:elevation="6dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,34 +15,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/textName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ana Bibelforscher"
+                android:text="Nome"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/time"
+                android:id="@+id/textTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Agora Mesmo" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imagePost"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginTop="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/imagem1" />
+                app:srcCompat="@drawable/fly" />
 
             <TextView
-                android:id="@+id/subtitle"
+                android:id="@+id/subtitlePost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Up, up and away..." />
+                android:layout_marginTop="10dp"
+                android:text="Legenda" />
         </LinearLayout>
 
         <LinearLayout
@@ -50,18 +54,28 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/like"
+                style="?attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:drawableLeft="@drawable/ic_like_grey_24" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/comment"
+                style="?attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:drawableLeft="@drawable/ic_comment_grey_24" />
+
+            <Button
+                android:id="@+id/share"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_share_grey_24" />
         </LinearLayout>
 
     </LinearLayout>

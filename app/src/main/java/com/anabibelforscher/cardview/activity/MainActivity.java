@@ -8,10 +8,15 @@ import android.os.Bundle;
 
 import com.anabibelforscher.cardview.R;
 import com.anabibelforscher.cardview.adapter.PostAdapter;
+import com.anabibelforscher.cardview.model.Post;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerPost;
+    private List<Post> posts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,20 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerPost.setLayoutManager(layoutManager);
 
         //Adapter
-        PostAdapter adapter = new PostAdapter();
+        this.gerarPosts();
+        PostAdapter adapter = new PostAdapter(posts);
         mRecyclerPost.setAdapter(adapter);
+    }
+
+    //Gerar posts de forma mais simples
+    public void gerarPosts(){
+        Post post = new Post("Ana Bibelforscher","September Song", "Now",R.drawable.nature);
+        this.posts.add(post);
+        post = new Post("Ana Bibelforscher","La vie en rose", "1 week ago", R.drawable.paris);
+        this.posts.add(post);
+        post = new Post("Ana Bibelforscher","Clouds", "2 weeks ago", R.drawable.sky);
+        this.posts.add(post);
+        post = new Post("Ana Bibelforscher","Up, up and away...", "3 weeks ago", R.drawable.fly);
+        this.posts.add(post);
     }
 }
